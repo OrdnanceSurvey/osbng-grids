@@ -1,0 +1,8 @@
+name: osbng-grids
+channels:
+  - conda-forge
+dependencies:
+  - geopandas
+  - matplotlib
+  - osbng
+  - pyarrow
