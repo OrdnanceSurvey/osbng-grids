@@ -1,0 +1,12 @@
+Data Licensing Notice
+----------------------
+
+The grid datasets included in this repository under the `osbng-grids/data` directory are licensed under the Open Government Licence v3.0 (OGL v3.0).
+
+Contains OS data © Crown copyright and database right 2025.
+
+You are free to use this data under the terms of the OGL:
+https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+
+The code in this repository is licensed under the MIT License.
+See LICENSE for details.
