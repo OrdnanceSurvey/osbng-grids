@@ -1,4 +1,4 @@
-# `osbng-grids`
+# osbng-grids
 
 Grid datasets providing boundaries and identifiers for the Ordnance Survey (OS) British National Grid (BNG) index system at multiple spatial resolutions.
 
