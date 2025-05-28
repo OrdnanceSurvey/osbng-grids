@@ -4,7 +4,9 @@ Grid datasets providing boundaries and identifiers for the Ordnance Survey (OS) 
 
 ## Overview
 
-These datasets include grid square boundaries and associated identifiers as BNG references covering the bounds `(0, 0, 700000, 1300000)` of the BNG index system. Data is supplied in both [GeoParquet](https://github.com/opengeospatial/geoparquet) and [GeoPackage (GPKG)](https://github.com/opengeospatial/geopackage) formats. The repository also contains the Python script used for data generation and a Jupyter notebook demonstrating custom grid creation with the [`osbng`](https://github.com/OrdnanceSurvey/osbng-py) Python package.
+These datasets include grid square boundaries and associated identifiers as BNG references covering the bounds `(0, 0, 700000, 1300000)` of the BNG index system. Data is supplied in both [GeoParquet](https://github.com/opengeospatial/geoparquet) and [GeoPackage (GPKG)](https://github.com/opengeospatial/geopackage) formats. The GPKG is provided using 7-Zip compression `.7z` due to the GitHub file size limits. 
+
+The repository also contains the Python script used for data generation and a Jupyter notebook demonstrating custom grid creation with the [`osbng`](https://github.com/OrdnanceSurvey/osbng-py) Python package.
 
 ![BNG index system overview at 100km](https://github.com/OrdnanceSurvey/osbng-py/blob/main/docs/_static/images/osbng_grids_100km.png?raw=true)
 
