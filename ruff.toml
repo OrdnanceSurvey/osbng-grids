@@ -1,4 +1,4 @@
-[tool.ruff.lint]
+[lint]
 select = [
     # flake8-annotations
     # Checks for missing or incorrect type annotations
@@ -24,6 +24,6 @@ ignore = [
 # Exclude directories and files
 exclude = ["osbng-grids/data/"]
 
-[tool.ruff.lint.pydocstyle]
+[lint.pydocstyle]
 # Use Google-style convention for docstrings
 convention = "google"
