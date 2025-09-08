@@ -26,7 +26,7 @@ Grid data at finer BNG resolutions below 1km, or for custom geographic extents, 
 
 Note: If you only need the ready-made grid datasets in `osbng-grids/data/`, no environment setup is required. Set up an environment only if you plan to run the scripts, notebooks, or to generate custom grid datasets.
 
-Ensure system dependencies like GEOS/PROJ/GDAL are installed, then install from the `requirements.txt` file using `pip`:
+Install the dependencies listed in `requirements.txt` using `pip`:
 
 ```shell
 pip install -r requirements.txt
