@@ -1,14 +1,17 @@
 """Create BNG grid square data at multiple resolutions over the BNG index system bounds.
 
-Data generation uses the __geo_interface__ (https://gist.github.com/sgillies/2217756) 
-representation of BNG grid squares, a GeoJSON-like mapping which enables integration 
+Data generation uses the __geo_interface__ (https://gist.github.com/sgillies/2217756)
+representation of BNG grid squares, a GeoJSON-like mapping which enables integration
 with the GeoPandas (https://github.com/geopandas/geopandas) Python package.
 
-Data saved as GeoParquet (https://github.com/opengeospatial/geoparquet) and GeoPackage 
-(GPKG) at 100km, 50km, 10km, 5km and 1km resolutions.
+Data saved as Parquet (https://github.com/apache/parquet-format/) using the native
+GEOMETRY logical type, GeoParquet (https://github.com/opengeospatial/geoparquet)
+and GeoPackage (GPKG) at 100km, 50km, 10km, 5km and 1km resolutions.
 """
 
+import geoarrow.pyarrow as ga
 import geopandas as gpd
+import pyarrow as pa
 from osbng.grids import (
     bng_grid_1km,
     bng_grid_5km,
@@ -16,8 +19,9 @@ from osbng.grids import (
     bng_grid_50km,
     bng_grid_100km,
 )
+from pyarrow import parquet
 
-# Grid square data covering the BNG index system bounds at 100km, 50km, 10km, 5km 
+# Grid square data covering the BNG index system bounds at 100km, 50km, 10km, 5km
 # and 1km resolutions
 # Provided as iterators of GeoJSON-like mappings using the __geo_interface__ protocol
 # Datasets
@@ -31,6 +35,11 @@ for dataset, resolution in zip(datasets, resolutions):
     # Set GeoDataFrame coordinate reference system to British National Grid (EPSG:27700)
     # https://epsg.io/27700
     gdf = gpd.GeoDataFrame.from_features(dataset, crs=27700)
+
+    # Save GeoDataFrame to Parquet
+    # Uses the native GEOMETRY logical type
+    table = pa.table(gdf.to_arrow())
+    parquet.write_table(table, f"../data/parquet/osbng_grid_{resolution}.parquet")
 
     # Save GeoDataFrame to GeoParquet
     gdf.to_parquet(
