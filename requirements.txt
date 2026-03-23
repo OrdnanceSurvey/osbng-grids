@@ -1,3 +1,4 @@
+geoarrow-pyarrow
 geopandas
 matplotlib
 osbng

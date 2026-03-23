@@ -2,6 +2,7 @@ name: osbng-grids
 channels:
   - conda-forge
 dependencies:
+  - geoarrow-pyarrow
   - geopandas
   - matplotlib
   - osbng
